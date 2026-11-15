@@ -3,79 +3,110 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Friday, November 13, 2026 — Legal News Briefing — Sharma Legal Briefing</title>
+<title>Friday, November 13, 2026 — Legal News Briefing — The Sharma Legal Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#060b1d; --bg2:#0a1230; --card:rgba(255,255,255,.045); --card-brd:rgba(130,170,255,.18);
-  --ink:#e8edfb; --muted:#9fb0d8; --blue:#3b82f6; --violet:#8b5cf6; --cyan:#22d3ee;
-  --amber:#f5b544; --red:#fb7185; --grad:linear-gradient(92deg,#38bdf8,#818cf8,#c084fc);
+  --paper:#faf8f2; --paper2:#f5f0e1; --ink:#111111; --gray:#4a463c; --faint:#6d675a;
+  --hair:#cfc7ae; --hair2:#a89f83; --accent:#7a1f1f;
+  --serif:'Playfair Display',Georgia,'Times New Roman',Times,serif;
+  --body:Georgia,'Times New Roman',Times,serif;
+  --sans:Helvetica,Arial,'Segoe UI',sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(1100px 520px at 85% -80px,rgba(99,102,241,.28),transparent 60%),radial-gradient(900px 500px at -10% 240px,rgba(14,165,233,.16),transparent 55%),var(--bg);
-  color:var(--ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:16.5px}
-a{color:#7dd3fc;text-decoration:none;word-break:break-word}
-a:hover{text-decoration:underline}
-.wrap{max-width:1060px;margin:0 auto;padding:0 18px 70px}
-header.site{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(6,11,29,.82);border-bottom:1px solid var(--card-brd)}
-.nav{max-width:1060px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.nav img.logo{height:52px;width:auto;background:#fff;border-radius:10px;padding:4px 8px}
-.brand{font-weight:800;font-size:1.22rem;letter-spacing:.2px}
-.brand .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.nav .sp{flex:1}
-.nav a.nl{color:var(--ink);font-weight:600;font-size:.95rem;padding:7px 13px;border:1px solid var(--card-brd);border-radius:999px;background:var(--card)}
-.nav a.nl:hover{border-color:#60a5fa;text-decoration:none;box-shadow:0 0 14px rgba(96,165,250,.35)}
-.hero{margin:26px 0 8px;padding:28px 26px;border:1px solid var(--card-brd);border-radius:22px;background:linear-gradient(140deg,rgba(59,130,246,.16),rgba(139,92,246,.12) 55%,rgba(34,211,238,.08)),var(--card);box-shadow:0 12px 44px rgba(2,6,23,.55)}
-.hero h1{margin:.25em 0 .3em;font-size:clamp(1.65rem,4.4vw,2.5rem);line-height:1.18}
-.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.chip{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.8rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#dbeafe;background:rgba(59,130,246,.18);border:1px solid rgba(96,165,250,.45)}
-.chip.violet{color:#ede9fe;background:rgba(139,92,246,.18);border-color:rgba(167,139,250,.5)}
-.chip.amber{color:#fef3c7;background:rgba(245,181,68,.14);border-color:rgba(245,181,68,.5)}
-.biggest{margin-top:14px;padding:16px 18px;border-radius:16px;border:1px solid rgba(245,181,68,.45);background:rgba(245,181,68,.07)}
-.biggest b{color:var(--amber)}
-article{background:var(--card);border:1px solid var(--card-brd);border-radius:22px;padding:10px 30px 30px;margin-top:22px;box-shadow:0 12px 44px rgba(2,6,23,.45)}
-article h1{font-size:1.55rem;line-height:1.3;margin-top:26px}
-article h2{margin:38px 0 14px;padding:10px 16px;font-size:1.13rem;line-height:1.4;border-radius:12px;color:#eef2ff;
-  background:linear-gradient(92deg,rgba(59,130,246,.30),rgba(139,92,246,.26));border:1px solid rgba(129,140,248,.5);box-shadow:0 0 18px rgba(99,102,241,.18)}
-article h2.quarantine{background:linear-gradient(92deg,rgba(244,63,94,.26),rgba(245,181,68,.18));border-color:rgba(251,113,133,.55)}
-article h3{margin:30px 0 8px;padding-left:13px;font-size:1.07rem;line-height:1.45;border-left:4px solid #60a5fa}
-article h4{margin:22px 0 6px;font-size:1rem;color:#c7d6ff}
-article p,article li{color:#dbe3f7}
-article strong{color:#fff}
-article hr{border:none;border-top:1px solid var(--card-brd);margin:30px 0}
-article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:.93rem;display:block;overflow-x:auto}
-article th,article td{border:1px solid var(--card-brd);padding:8px 10px;text-align:left;vertical-align:top}
-article th{background:rgba(59,130,246,.16)}
-article code{background:rgba(148,163,255,.16);padding:1px 6px;border-radius:6px;font-size:.9em}
-.deadline-flag{border-left:3px solid var(--amber)!important;padding-left:10px}
-.pager{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.pager a{flex:1;min-width:210px;text-align:center;padding:12px;border-radius:14px;border:1px solid var(--card-brd);background:var(--card);color:var(--ink);font-weight:700}
-.pager a:hover{border-color:#60a5fa;text-decoration:none;box-shadow:0 0 14px rgba(96,165,250,.3)}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-top:22px}
-.card{display:block;padding:20px;border-radius:18px;border:1px solid var(--card-brd);background:var(--card);color:var(--ink)}
-.card:hover{text-decoration:none;border-color:#818cf8;box-shadow:0 0 22px rgba(99,102,241,.28)}
-.card .d{font-size:1.12rem;font-weight:800;margin:8px 0 6px}
-.card p{color:var(--muted);margin:0;font-size:.95rem}
-footer{color:var(--muted);font-size:.88rem;margin-top:30px;text-align:center}
-.legend{font-size:.9rem;color:var(--muted);margin-top:12px}
-@media(max-width:640px){article{padding:6px 17px 24px}.nav img.logo{height:42px}.hero{padding:21px 18px}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;font-size:16.5px}
+a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;word-break:break-word}
+a:hover{color:var(--accent)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 64px}
+@media(min-width:1060px){.wrap{border-left:1px solid var(--hair);border-right:1px solid var(--hair)}}
+/* ---------- Masthead ---------- */
+.masthead{text-align:center;padding:26px 0 0}
+.masthead img.logo{height:64px;width:auto}
+.nameplate{font-family:var(--serif);font-weight:900;font-size:clamp(2.1rem,6.2vw,3.6rem);line-height:1.05;letter-spacing:.01em;margin:10px 0 4px;color:var(--ink)}
+.tagline{font-style:italic;color:var(--gray);font-size:.98rem;margin:0 0 14px}
+.dateline{border-top:1px solid var(--ink);border-bottom:3px solid var(--ink);padding:6px 2px;display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;
+  font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.dateline .dl-c{text-align:center;flex:1}
+.dateline a{text-decoration:none}
+.dateline a:hover{text-decoration:underline;color:var(--accent)}
+.pagenav{border-bottom:1px solid var(--hair2);padding:7px 0;text-align:center;font-family:var(--sans);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase}
+.pagenav a{text-decoration:none;margin:0 14px}
+.pagenav a:hover{text-decoration:underline;color:var(--accent)}
+/* ---------- Front matter (edition header) ---------- */
+.frontmatter{margin:26px 0 4px;text-align:center}
+.kick{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+.frontmatter h1.headline{font-family:var(--serif);font-weight:800;font-size:clamp(1.7rem,4.6vw,2.6rem);line-height:1.15;margin:.3em 0 .25em}
+.coverage{font-style:italic;color:var(--gray);margin:0 auto;max-width:720px}
+.lead{max-width:820px;margin:22px auto 0;text-align:left;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 4px 16px}
+.lead .lead-kick{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.lead p{font-family:var(--serif);font-size:clamp(1.12rem,2.6vw,1.35rem);line-height:1.45;margin:0}
+.contents{margin:18px auto 0;max-width:820px;border-top:1px solid var(--hair2);border-bottom:1px solid var(--hair2);padding:8px 4px;
+  font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);text-align:center;line-height:1.9}
+/* ---------- Article ---------- */
+article{margin-top:10px}
+article h1{font-family:var(--serif);font-weight:800;font-size:clamp(1.45rem,3.6vw,2rem);line-height:1.25;text-align:center;margin:26px 0 6px;padding-bottom:14px;border-bottom:1px solid var(--hair2)}
+article h2{margin:42px 0 18px;padding:9px 6px;text-align:center;font-family:var(--body);font-weight:700;font-size:1.08rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;
+  border-top:3px solid var(--ink);border-bottom:1px solid var(--ink)}
+article h3{margin:30px 0 8px;padding-top:15px;border-top:1px solid var(--hair);font-family:var(--serif);font-weight:700;font-size:1.22rem;line-height:1.35}
+article h4{margin:22px 0 6px;font-size:1.02rem;font-style:italic}
+article p,article li{color:var(--ink)}
+article strong{color:#000}
+article hr{border:none;border-top:1px solid var(--hair2);margin:30px auto;width:55%}
+article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:.92rem;display:block;overflow-x:auto;font-family:var(--sans)}
+article th,article td{border:1px solid var(--ink);padding:7px 10px;text-align:left;vertical-align:top}
+article th{background:var(--paper2)}
+article code{background:#efe9d6;padding:1px 5px;font-size:.88em}
+article blockquote{margin:18px 10px;padding:2px 18px;border-left:2px solid var(--ink);font-style:italic;color:var(--gray)}
+.lead-p::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4em;line-height:.82;padding:4px 10px 0 0}
+.deadline-flag{border-left:2px solid var(--accent);padding-left:10px}
+/* ---------- Boxed notices (unverified / recycled / could-not-verify) ---------- */
+.notice{border:3px double var(--ink);background:var(--paper2);padding:4px 24px 20px;margin:36px 0}
+.notice h2{border-top:none;border-bottom:1px solid var(--ink);text-align:left;color:var(--accent);margin-top:18px}
+/* ---------- Pager ---------- */
+.pager{display:flex;flex-wrap:wrap;margin-top:34px;border-top:3px double var(--ink)}
+.pager a{flex:1;min-width:200px;text-align:center;padding:12px 8px;color:var(--ink);text-decoration:none;
+  font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.pager a + a{border-left:1px solid var(--hair)}
+.pager a:hover{text-decoration:underline;color:var(--accent)}
+/* ---------- Archive / back issues ---------- */
+.backissues{margin-top:8px}
+.issue{display:block;padding:18px 4px 20px;border-bottom:1px solid var(--hair2);color:var(--ink);text-decoration:none}
+.issue:first-child{border-top:1px solid var(--ink)}
+.issue:hover{text-decoration:none;background:#f3eee0}
+.issue:hover .d{text-decoration:underline}
+.issue .kick{font-size:.74rem}
+.issue .d{font-family:var(--serif);font-weight:800;font-size:1.45rem;line-height:1.25;margin:6px 0 6px}
+.issue p{margin:0;color:var(--gray)}
+.issue .leadlabel{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.issue .win{margin-top:7px;font-style:italic;font-size:.95rem}
+footer{border-top:4px double var(--ink);margin-top:38px;padding-top:14px;text-align:center;color:var(--gray);font-size:.9rem;font-style:italic}
+@media(max-width:640px){
+  .masthead img.logo{height:50px}
+  .dateline{justify-content:center;text-align:center}
+  .dateline .dl-c{flex-basis:100%;order:3}
+  article{font-size:16px}
+  .notice{padding:2px 15px 16px}
+  .pager a{min-width:150px}
+}
 </style>
 </head>
 <body>
-<header class="site"><div class="nav">
-<img class="logo" src="../logo.png" alt="Sharma Electric &amp; HVAC logo">
-<span class="brand">Sharma <span class="grad">Legal Briefing</span></span>
-<span class="sp"></span>
-<a class="nl" href="../index.html">Latest</a>
-<a class="nl" href="../archive/index.html">Archive</a>
-</div></header>
 <div class="wrap">
-<section class="hero">
-<span class="chip">Archive edition</span> <span class="chip violet">Friday, November 13, 2026</span>
-<h1>Legal News Briefing — <span class="grad">Friday, 2026-11-13</span></h1>
-<p style="color:var(--muted);margin:0">Coverage window: Thu Nov 12 – Fri Nov 13, 2026 (core) (Eastern Time) · For Sharma Electric &amp; HVAC — Florida electrical &amp; HVAC subcontractor, builder clients, supplier accounts.</p>
-<div class="biggest"><b>★ Biggest story:</b> U.S. Supreme Court grants review of Trump&#x27;s border asylum shutdown — Mullin v. RAICES, No. 26-239 (Fri Nov 13).</div>
-<p class="legend">Sections: (1) Big legal news · (2) Florida · (3) Business law · (4) Construction &amp; contractor law · (5) Money &amp; deal law. Amber-edged blocks state a deadline in the report text. Unverified and recycled items stay in their own quarantined sections at the end of each edition, as in the source reports.</p>
+<header class="masthead">
+<img class="logo" src="../logo.png" alt="Sharma Electric &amp; HVAC logo">
+<div class="nameplate">The Sharma Legal Briefing</div>
+<p class="tagline">Daily legal news for Sharma Electric &amp; HVAC — a Florida electrical &amp; HVAC subcontractor</p>
+<div class="dateline"><span>Orlando, Florida</span><span class="dl-c">Friday, November 13, 2026</span><span>Daily Edition</span></div>
+<nav class="pagenav"><a href="../index.html">Latest Edition</a><a href="../archive/index.html">Archive — Back Issues</a></nav>
+</header>
+<section class="frontmatter">
+<span class="kick">Archive Edition</span>
+<h1 class="headline">Legal News Briefing — Friday, 2026-11-13</h1>
+<p class="coverage">Coverage window: Thu Nov 12 – Fri Nov 13, 2026 (core) (Eastern Time) · Prepared for Sharma Electric &amp; HVAC — builder clients, supplier accounts, crews statewide.</p>
+<div class="lead"><span class="lead-kick">★ Lead Story</span><p>U.S. Supreme Court grants review of Trump&#x27;s border asylum shutdown — Mullin v. RAICES, No. 26-239 (Fri Nov 13).</p></div>
+<p class="contents">In this edition — §1 Big Legal News &nbsp;·&nbsp; §2 Florida &nbsp;·&nbsp; §3 Business Law &nbsp;·&nbsp; §4 Construction &amp; Contractor Law &nbsp;·&nbsp; §5 Money &amp; Deal Law<br>Blocks ruled in burgundy state a deadline in the report text. Unverified and recycled items appear in boxed notices at the end of each edition, as in the source reports.</p>
 </section>
 <article><h1>Legal News Briefing — Sharma Electric &amp; HVAC</h1>
 <p><strong>Coverage window:</strong> Core Thu Nov 12 – Fri Nov 13, 2026 (ET); wider 72-hour window Tue Nov 10 – Fri Nov 13, 2026 used only for items not covered in yesterday's (Nov 12) briefing. Researched Fri Nov 13, 2026.
@@ -273,7 +304,7 @@ Official opinion (primary): <a href="https://flcourts-media.ccplatform.net/conte
 <li>Cross-references: the Covetrus antitrust suit (§1.2) is the week's main supplier-channel story, and the Acima settlement (§1.3) is the week's main consumer-credit story; both are analysed above and not repeated here.</li>
 </ul>
 <hr>
-<h2>UNVERIFIED — quarantined (excluded from the confirmed briefing above)</h2>
+<div class="notice"><h2>UNVERIFIED — quarantined (excluded from the confirmed briefing above)</h2>
 <ol>
 <li><strong>"Trump executive order of Nov 12, 2026 stopping gold/silver/platinum price manipulation"</strong> — traces to a single Facebook conspiracy video with no corroboration from any official or reputable source. Treated as false/unverified. <a href="https://www.facebook.com/reel/1662896515499845/">https://www.facebook.com/reel/1662896515499845/</a></li>
 <li><strong>Law360 headline, "Fla. Justices End Automatic Speedy-Trial Discharge Rule" (Nov 12)</strong> — no case name could be identified, and Florida Court Tracker's list of the Florida Supreme Court's Nov 12 actions shows <strong>only</strong> the rules amendments in §2.1, which contradicts a merits speedy-trial decision that day. UNVERIFIED / could not confirm.</li>
@@ -284,7 +315,7 @@ Official opinion (primary): <a href="https://flcourts-media.ccplatform.net/conte
 <li><strong>13 state AGs' amicus brief backing Florida's SCOTUS petition on the Stop WOKE Act</strong> — Inside Higher Ed (Nov 12) reports the brief was filed "Monday," which is ambiguous between Nov 9 and Nov 10; the filing date was not verified. <a href="https://www.insidehighered.com/news/quick-takes/2026/11/12/13-ags-ask-supreme-court-uphold-floridas-stop-woke-act">https://www.insidehighered.com/news/quick-takes/2026/11/12/13-ags-ask-supreme-court-uphold-floridas-stop-woke-act</a></li>
 </ol>
 <hr>
-<h2>Could not verify</h2>
+</div><div class="notice"><h2>Could not verify</h2>
 <ul>
 <li><strong>Probate Rules 5.670 / Part V amendment (Nov 12):</strong> confirmed as issued (Florida Law Weekly list) but substance and effective date not obtained from the opinion.</li>
 <li><strong>Florida AG's own Acima release:</strong> Florida's participation is confirmed in other states' AG releases; no myfloridalegal.com release was found.</li>
@@ -296,7 +327,7 @@ Official opinion (primary): <a href="https://flcourts-media.ccplatform.net/conte
 <li><strong>Boberg v. Ox of South Florida, Inc.</strong> and <strong>First Care Therapy, LLC v. Congress Ave Boynton, LLC</strong> (Fla. 4th DCA, Nov 12, 2026) appear on the Nov 12 opinion list; their holdings were not reviewed, so no business-law significance is claimed for them.</li>
 </ul>
 <hr>
-<h2>Sources</h2>
+</div><h2>Sources</h2>
 <p><strong>Primary (opened or cited from the issuing authority):</strong>
 - FTC, Covetrus press release, Nov 13, 2026 — <a href="https://www.ftc.gov/news-events/news/press-releases/2026/11/ftc-sues-block-veterinary-supplies-distributor-covetruss-35-billion-acquisition-rival-mwi">https://www.ftc.gov/news-events/news/press-releases/2026/11/ftc-sues-block-veterinary-supplies-distributor-covetruss-35-billion-acquisition-rival-mwi</a>
 - IRS, IR-2026-136 / Notice 2026-66, Nov 12, 2026 (verified live) — <a href="https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500">https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500</a>
@@ -319,20 +350,22 @@ Official opinion (primary): <a href="https://flcourts-media.ccplatform.net/conte
 - NY Post (English-only guidance reaction; scaffold collapse) — <a href="https://nypost.com/2026/11/13/us-news/trump-admin-pushes-federal-agencies-to-go-english-only-in-sweeping-new-directive/">https://nypost.com/2026/11/13/us-news/trump-admin-pushes-federal-agencies-to-go-english-only-in-sweeping-new-directive/</a> ; <a href="https://nypost.com/2026/11/12/us-news/nj-construction-worker-in-deadly-long-island-bridge-scaffolding-collapse-idd-as-brother-of-brazilian-pol/">https://nypost.com/2026/11/12/us-news/nj-construction-worker-in-deadly-long-island-bridge-scaffolding-collapse-idd-as-brother-of-brazilian-pol/</a>
 - BankruptcyObserver case pages (PACER-derived) — UPG Electrical, G&amp;G Builders, Charbonnier Builders, American Builders (URLs in §5.1)
 - USCIS I-129 deference proposal summary — <a href="https://www.relomatrix.com/blog/uscis-deference-rule-h1b-extensions-2026/">https://www.relomatrix.com/blog/uscis-deference-rule-h1b-extensions-2026/</a></p>
-<p><em>Working notes with per-source detail are in <code>notes/01-federal-big-news.md</code>, <code>notes/02-florida.md</code>, <code>notes/03-business-law.md</code>, and <code>notes/04-construction-money-unverified.md</code>.</em></p></article><div class="pager"><a href="index.html">← All editions (Archive)</a><a href="2026-11-12.html">← Thursday 2026-11-12</a><a href="2026-11-14.html">Saturday 2026-11-14 →</a><a href="../index.html">Latest edition →</a></div>
+<p><em>Working notes with per-source detail are in <code>notes/01-federal-big-news.md</code>, <code>notes/02-florida.md</code>, <code>notes/03-business-law.md</code>, and <code>notes/04-construction-money-unverified.md</code>.</em></p></article><div class="pager"><a href="index.html">← All Editions</a><a href="2026-11-12.html">← Thursday 2026-11-12</a><a href="2026-11-14.html">Saturday 2026-11-14 →</a><a href="../index.html">Latest Edition →</a></div>
 <footer>Sharma Electric &amp; HVAC — daily legal news briefing for the office. General legal information only, not legal advice on a specific job. Every item carries its source link in the briefing text.</footer>
 </div>
 
 <script>
-// Quarantine styling: keep unverified / recycled / could-not-verify sections visually
-// separate, exactly as the reports separate them. Amber edge: blocks whose own text
-// states a deadline (the reports carry no separate 'Act on it' marker list).
-document.querySelectorAll('article h2').forEach(function(h){
-  if(/unverified|recycled|could not verify/i.test(h.textContent)){h.classList.add('quarantine');}
-});
-document.querySelectorAll('article li, article p').forEach(function(el){
-  if(/deadline/i.test(el.textContent) && el.textContent.length < 900){el.classList.add('deadline-flag');}
-});
+// Newspaper touches applied at read time (content itself is untouched):
+// a drop cap on the article's first paragraph, and a burgundy rule beside any
+// block whose own text states a deadline (the reports carry no separate
+// 'Act on it' marker list, so none is invented).
+(function(){
+  var first = document.querySelector('article p');
+  if(first && first.textContent.trim().length > 120){first.classList.add('lead-p');}
+  document.querySelectorAll('article li, article p').forEach(function(el){
+    if(/deadline/i.test(el.textContent) && el.textContent.length < 900){el.classList.add('deadline-flag');}
+  });
+})();
 </script>
 
 </body>
