@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archive — Legal News Briefing — Sharma Legal Briefing</title>
+<style>
+:root{
+  --bg:#060b1d; --bg2:#0a1230; --card:rgba(255,255,255,.045); --card-brd:rgba(130,170,255,.18);
+  --ink:#e8edfb; --muted:#9fb0d8; --blue:#3b82f6; --violet:#8b5cf6; --cyan:#22d3ee;
+  --amber:#f5b544; --red:#fb7185; --grad:linear-gradient(92deg,#38bdf8,#818cf8,#c084fc);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1100px 520px at 85% -80px,rgba(99,102,241,.28),transparent 60%),radial-gradient(900px 500px at -10% 240px,rgba(14,165,233,.16),transparent 55%),var(--bg);
+  color:var(--ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:16.5px}
+a{color:#7dd3fc;text-decoration:none;word-break:break-word}
+a:hover{text-decoration:underline}
+.wrap{max-width:1060px;margin:0 auto;padding:0 18px 70px}
+header.site{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(6,11,29,.82);border-bottom:1px solid var(--card-brd)}
+.nav{max-width:1060px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.nav img.logo{height:52px;width:auto;background:#fff;border-radius:10px;padding:4px 8px}
+.brand{font-weight:800;font-size:1.22rem;letter-spacing:.2px}
+.brand .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav .sp{flex:1}
+.nav a.nl{color:var(--ink);font-weight:600;font-size:.95rem;padding:7px 13px;border:1px solid var(--card-brd);border-radius:999px;background:var(--card)}
+.nav a.nl:hover{border-color:#60a5fa;text-decoration:none;box-shadow:0 0 14px rgba(96,165,250,.35)}
+.hero{margin:26px 0 8px;padding:28px 26px;border:1px solid var(--card-brd);border-radius:22px;background:linear-gradient(140deg,rgba(59,130,246,.16),rgba(139,92,246,.12) 55%,rgba(34,211,238,.08)),var(--card);box-shadow:0 12px 44px rgba(2,6,23,.55)}
+.hero h1{margin:.25em 0 .3em;font-size:clamp(1.65rem,4.4vw,2.5rem);line-height:1.18}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chip{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.8rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#dbeafe;background:rgba(59,130,246,.18);border:1px solid rgba(96,165,250,.45)}
+.chip.violet{color:#ede9fe;background:rgba(139,92,246,.18);border-color:rgba(167,139,250,.5)}
+.chip.amber{color:#fef3c7;background:rgba(245,181,68,.14);border-color:rgba(245,181,68,.5)}
+.biggest{margin-top:14px;padding:16px 18px;border-radius:16px;border:1px solid rgba(245,181,68,.45);background:rgba(245,181,68,.07)}
+.biggest b{color:var(--amber)}
+article{background:var(--card);border:1px solid var(--card-brd);border-radius:22px;padding:10px 30px 30px;margin-top:22px;box-shadow:0 12px 44px rgba(2,6,23,.45)}
+article h1{font-size:1.55rem;line-height:1.3;margin-top:26px}
+article h2{margin:38px 0 14px;padding:10px 16px;font-size:1.13rem;line-height:1.4;border-radius:12px;color:#eef2ff;
+  background:linear-gradient(92deg,rgba(59,130,246,.30),rgba(139,92,246,.26));border:1px solid rgba(129,140,248,.5);box-shadow:0 0 18px rgba(99,102,241,.18)}
+article h2.quarantine{background:linear-gradient(92deg,rgba(244,63,94,.26),rgba(245,181,68,.18));border-color:rgba(251,113,133,.55)}
+article h3{margin:30px 0 8px;padding-left:13px;font-size:1.07rem;line-height:1.45;border-left:4px solid #60a5fa}
+article h4{margin:22px 0 6px;font-size:1rem;color:#c7d6ff}
+article p,article li{color:#dbe3f7}
+article strong{color:#fff}
+article hr{border:none;border-top:1px solid var(--card-brd);margin:30px 0}
+article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:.93rem;display:block;overflow-x:auto}
+article th,article td{border:1px solid var(--card-brd);padding:8px 10px;text-align:left;vertical-align:top}
+article th{background:rgba(59,130,246,.16)}
+article code{background:rgba(148,163,255,.16);padding:1px 6px;border-radius:6px;font-size:.9em}
+.deadline-flag{border-left:3px solid var(--amber)!important;padding-left:10px}
+.pager{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.pager a{flex:1;min-width:210px;text-align:center;padding:12px;border-radius:14px;border:1px solid var(--card-brd);background:var(--card);color:var(--ink);font-weight:700}
+.pager a:hover{border-color:#60a5fa;text-decoration:none;box-shadow:0 0 14px rgba(96,165,250,.3)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-top:22px}
+.card{display:block;padding:20px;border-radius:18px;border:1px solid var(--card-brd);background:var(--card);color:var(--ink)}
+.card:hover{text-decoration:none;border-color:#818cf8;box-shadow:0 0 22px rgba(99,102,241,.28)}
+.card .d{font-size:1.12rem;font-weight:800;margin:8px 0 6px}
+.card p{color:var(--muted);margin:0;font-size:.95rem}
+footer{color:var(--muted);font-size:.88rem;margin-top:30px;text-align:center}
+.legend{font-size:.9rem;color:var(--muted);margin-top:12px}
+@media(max-width:640px){article{padding:6px 17px 24px}.nav img.logo{height:42px}.hero{padding:21px 18px}}
+</style>
+</head>
+<body>
+<header class="site"><div class="nav">
+<img class="logo" src="../logo.png" alt="Sharma Electric &amp; HVAC logo">
+<span class="brand">Sharma <span class="grad">Legal Briefing</span></span>
+<span class="sp"></span>
+<a class="nl" href="../index.html">Latest</a>
+<a class="nl" href="../archive/index.html">Archive</a>
+</div></header>
+<div class="wrap">
+<section class="hero">
+<span class="chip">Archive</span>
+<h1>Every edition, <span class="grad">kept</span></h1>
+<p style="color:var(--muted);margin:0">The daily Sharma legal briefing archive — 4 editions, Thursday, November 12, 2026 through Sunday, November 15, 2026. New editions are added daily; nothing is overwritten.</p>
+</section>
+<div class="cards"><a class="card" href="2026-11-15.html">
+<span class="chip">Sunday</span> <span class="chip violet">2026-11-15</span>
+<div class="d">Sunday, November 15, 2026</div>
+<p><b style="color:#f5b544">★ Biggest story:</b> Judge Ana Reyes (D.D.C.) issues a Saturday Nov 14 TRO halting the East Potomac Park / golf-course closure and redevelopment through Nov 28; President vows an expedited appeal Nov 15.</p>
+<p style="margin-top:8px">Coverage window: Sat Nov 14 – Sun Nov 15, 2026 (core) (ET) →</p></a><a class="card" href="2026-11-14.html">
+<span class="chip">Saturday</span> <span class="chip violet">2026-11-14</span>
+<div class="d">Saturday, November 14, 2026</div>
+<p><b style="color:#f5b544">★ Biggest story:</b> FAA nationwide ground stop Fri Nov 13; Nov 14 follow-up blames a contractor&#x27;s copper-to-fiber work at one remote site plus a flooding router.</p>
+<p style="margin-top:8px">Coverage window: Fri Nov 13 – Sat Nov 14, 2026 (core) (ET) →</p></a><a class="card" href="2026-11-13.html">
+<span class="chip">Friday</span> <span class="chip violet">2026-11-13</span>
+<div class="d">Friday, November 13, 2026</div>
+<p><b style="color:#f5b544">★ Biggest story:</b> U.S. Supreme Court grants review of Trump&#x27;s border asylum shutdown — Mullin v. RAICES, No. 26-239 (Fri Nov 13).</p>
+<p style="margin-top:8px">Coverage window: Thu Nov 12 – Fri Nov 13, 2026 (core) (ET) →</p></a><a class="card" href="2026-11-12.html">
+<span class="chip">Thursday</span> <span class="chip violet">2026-11-12</span>
+<div class="d">Thursday, November 12, 2026</div>
+<p><b style="color:#f5b544">★ Biggest story:</b> Bankruptcy Threshold Adjustment Act signed Tue Nov 10 — Subchapter V small-business Chapter 11 debt limit permanently raised to $7.5 million.</p>
+<p style="margin-top:8px">Coverage window: Mon Nov 9 – Thu Nov 12, 2026 (ET) →</p></a></div><div class="pager"><a href="../index.html">← Latest edition</a></div>
+<footer>Sharma Electric &amp; HVAC — daily legal news briefing for the office. General legal information only, not legal advice on a specific job. Every item carries its source link in the briefing text.</footer>
+</div>
+
+<script>
+// Quarantine styling: keep unverified / recycled / could-not-verify sections visually
+// separate, exactly as the reports separate them. Amber edge: blocks whose own text
+// states a deadline (the reports carry no separate 'Act on it' marker list).
+document.querySelectorAll('article h2').forEach(function(h){
+  if(/unverified|recycled|could not verify/i.test(h.textContent)){h.classList.add('quarantine');}
+});
+document.querySelectorAll('article li, article p').forEach(function(el){
+  if(/deadline/i.test(el.textContent) && el.textContent.length < 900){el.classList.add('deadline-flag');}
+});
+</script>
+
+</body>
+</html>
