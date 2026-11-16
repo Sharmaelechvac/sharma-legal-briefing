@@ -72,6 +72,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-15-20261115-2109/report.md",
         "biggest": "Judge Ana Reyes (D.D.C.) issues a Saturday Nov 14 TRO halting the East Potomac Park / golf-course closure and redevelopment through Nov 28; President vows an expedited appeal Nov 15.",
     },
+    {
+        "date": "2026-11-16",
+        "weekday": "Monday",
+        "label": "Monday, November 16, 2026",
+        "window": "Sun Nov 15 – Mon Nov 16, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-16-20261116-1000/report.md",
+        "biggest": "DOJ warns Sen. Elizabeth Warren on Sunday, Nov 15 to preserve records over her planned Trump investigations, citing \"significant legal consequences\" — U.S. Attorney Aaron Reitz's letter is the latest in a series to Democrats.",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
@@ -116,6 +124,14 @@ IMAGES = {
             "caption": "From the report on the Third DCA's AvMed decision — no competitive bidding was required for Miami-Dade's self-insured plan administrator.",
             "credit": "Photo: Insurance Business Magazine — from the article cited at §2B",
             "alt": "A boardroom table set with contract documents, from Insurance Business Magazine",
+        },
+    },
+    "2026-11-16": {
+        "lead": {
+            "file": "2026-11-16-lead-doj.jpg",
+            "caption": "The Department of Justice headquarters sign in Washington — the Justice Department warned Sen. Elizabeth Warren on Sunday to preserve records over her planned investigations.",
+            "credit": "Photo: Reuters — from the report cited at §1.1",
+            "alt": "Department of Justice headquarters sign, Washington, D.C., from the Reuters report on the Warren preservation letter",
         },
     },
     "2026-11-15": {
