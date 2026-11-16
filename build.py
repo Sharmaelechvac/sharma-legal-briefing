@@ -10,12 +10,17 @@ words (their What-happened / Sharma-impact lines and summary sections).
 Usability pass (Sanjay's direction, 2026-11-15 — "photos needed, more user
 friendly, just a lot of words"): each edition page opens with an At-a-Glance
 box, stories show headline + deck + Sharma-impact line with the full text
-folded, a sticky section jump-nav sits under the masthead, and photos pulled
-from the cited source articles themselves (see IMAGES) run in newspaper B&W.
+folded, a sticky section jump-nav sits under the header, and photos pulled
+from the cited source articles themselves (see IMAGES) run full color.
 
-Design: classic broadsheet newspaper — paper-white page, black ink, serif
-nameplate/headlines, double rules, hairline separations, boxed double-rule
-notices for unverified/recycled sections. Keep it that way.
+Design (Sanjay, 2026-11-15 — "words way too small, need a hot modern look";
+supersedes the broadsheet newspaper template): the standing Sharma design
+system in ~/workspace/DESIGN-RULES.md — navy #264387 / dark navy #1a2f61 /
+gold #F0A846 on page #f4f6fb, Barlow Semi Condensed 700 headings, Inter body
+at 18px, IBM Plex Mono for numbers/dates, real logo on a white header with a
+3px gold line under it, flat white panels, full-color photos, plain section
+headings ("Not confirmed", "Older stories going around again", "Could not
+check"). No gradients, shadows, pills, emoji icons or newspaper costume.
 
 Daily update: add the new report to EDITIONS, optionally add its cited-article
 photos to IMAGES (download the cited article's lead image into docs/img/ and
@@ -240,9 +245,9 @@ def story_section_number(title: str):
 
 
 NOTICE_KINDS = [
-    (re.compile(r"recycled", re.I), "sec-recycled", "Recycled"),
-    (re.compile(r"unverified|quarantined", re.I), "sec-unverified", "Unverified"),
-    (re.compile(r"could not verify|could-not-verify", re.I), "sec-couldnot", "Could Not Verify"),
+    (re.compile(r"recycled", re.I), "sec-recycled", "Older stories going around again"),
+    (re.compile(r"unverified|quarantined", re.I), "sec-unverified", "Not confirmed"),
+    (re.compile(r"could not verify|could-not-verify", re.I), "sec-couldnot", "Could not check"),
 ]
 
 
@@ -253,9 +258,10 @@ def chunk_md(chunk) -> str:
 
 def render_raw(chunk, anchors):
     out = md2html(chunk_md(chunk))
-    for rx, aid, _label in NOTICE_KINDS:
+    for rx, aid, label in NOTICE_KINDS:
         if chunk["level"] == 2 and rx.search(chunk["title"]):
-            out = out.replace("<h2>", f'<h2 id="{aid}">', 1)
+            # Plain heading per the design rules; items and in-text flags unchanged.
+            out = re.sub(r"<h2>.*?</h2>", f'<h2 id="{aid}">{label}</h2>', out, count=1, flags=re.S)
             anchors.add(aid)
             return f'<div class="notice">{out}</div>'
     return out
@@ -527,9 +533,9 @@ SECTION_LABELS = {
     "sec-3": "§3 Business Law",
     "sec-4": "§4 Construction &amp; Contractor Law",
     "sec-5": "§5 Money &amp; Deal Law",
-    "sec-recycled": "Recycled",
-    "sec-unverified": "Unverified",
-    "sec-couldnot": "Could Not Verify",
+    "sec-recycled": "Older stories going around again",
+    "sec-unverified": "Not confirmed",
+    "sec-couldnot": "Could not check",
 }
 
 
@@ -545,143 +551,136 @@ def jumpnav_html(anchors):
 
 CSS = """
 :root{
-  --paper:#faf8f2; --paper2:#f5f0e1; --ink:#111111; --gray:#4a463c; --faint:#6d675a;
-  --hair:#cfc7ae; --hair2:#a89f83; --accent:#7a1f1f;
-  --serif:'Playfair Display',Georgia,'Times New Roman',Times,serif;
-  --body:Georgia,'Times New Roman',Times,serif;
-  --sans:Helvetica,Arial,'Segoe UI',sans-serif;
+  --navy:#264387; --darknavy:#1a2f61; --gold:#F0A846; --ink:#1d2433;
+  --gray:#5b6478; --line:#dfe4ee; --page:#f4f6fb; --panel:#ffffff;
+  --head:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif;
+  --body:'Inter',-apple-system,'Segoe UI',Arial,sans-serif;
+  --mono:'IBM Plex Mono','SFMono-Regular',Consolas,'Courier New',monospace;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;font-size:16.5px}
-a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;word-break:break-word}
-a:hover{color:var(--accent)}
-.wrap{max-width:980px;margin:0 auto;padding:0 20px 64px}
-@media(min-width:1060px){.wrap{border-left:1px solid var(--hair);border-right:1px solid var(--hair)}}
-/* ---------- Masthead ---------- */
-.masthead{text-align:center;padding:26px 0 0}
-.masthead img.logo{height:64px;width:auto}
-.nameplate{font-family:var(--serif);font-weight:900;font-size:clamp(2.1rem,6.2vw,3.6rem);line-height:1.05;letter-spacing:.01em;margin:10px 0 4px;color:var(--ink)}
-.tagline{font-style:italic;color:var(--gray);font-size:.98rem;margin:0 0 14px}
-.dateline{border-top:1px solid var(--ink);border-bottom:3px solid var(--ink);padding:6px 2px;display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;
-  font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.dateline .dl-c{text-align:center;flex:1}
-.dateline a{text-decoration:none}
-.dateline a:hover{text-decoration:underline;color:var(--accent)}
-.pagenav{border-bottom:1px solid var(--hair2);padding:7px 0;text-align:center;font-family:var(--sans);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase}
-.pagenav a{text-decoration:none;margin:0 14px}
-.pagenav a:hover{text-decoration:underline;color:var(--accent)}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.65}
+a{color:var(--navy);text-decoration:underline;text-underline-offset:2px;word-break:break-word}
+a:hover{color:var(--darknavy)}
+.wrap{max-width:1020px;margin:0 auto;padding:0 16px 64px}
+/* ---------- Site header: white, real logo, gold line under ---------- */
+.sitehead{background:var(--panel);border:1px solid var(--line);border-top:none;border-radius:0 0 5px 5px;border-bottom:3px solid var(--gold);padding:22px 26px 0;margin-bottom:22px}
+.sitehead .brand{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.sitehead img.logo{height:56px;width:auto;flex:none}
+.sitetitle{font-family:var(--head);font-weight:700;font-size:36px;line-height:1.05;color:var(--darknavy);letter-spacing:.01em}
+.tagline{color:var(--gray);font-size:16px;margin:8px 0 0}
+.meta{font-family:var(--mono);font-size:14px;color:var(--gray);margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.pagenav{display:flex;flex-wrap:wrap;gap:4px 26px;margin-top:14px;border-top:1px solid var(--line)}
+.pagenav a{font-family:var(--head);font-weight:700;font-size:18px;letter-spacing:.03em;color:var(--navy);text-decoration:none;padding:12px 2px;min-height:48px;display:inline-flex;align-items:center}
+.pagenav a:hover{color:var(--darknavy);text-decoration:underline}
+.pagenav a.active{color:var(--darknavy);box-shadow:inset 0 -3px 0 var(--gold)}
 /* ---------- Front matter (edition header) ---------- */
-.frontmatter{margin:26px 0 4px;text-align:center}
-.kick{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
-.frontmatter h1.headline{font-family:var(--serif);font-weight:800;font-size:clamp(1.7rem,4.6vw,2.6rem);line-height:1.15;margin:.3em 0 .25em}
-.coverage{font-style:italic;color:var(--gray);margin:0 auto;max-width:720px}
-.lead{max-width:820px;margin:22px auto 0;text-align:left;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 4px 16px}
-.lead .lead-kick{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
-.lead p{font-family:var(--serif);font-size:clamp(1.12rem,2.6vw,1.35rem);line-height:1.45;margin:0}
-.contents{margin:18px auto 0;max-width:820px;border-top:1px solid var(--hair2);border-bottom:1px solid var(--hair2);padding:8px 4px;
-  font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);text-align:center;line-height:1.9}
-/* ---------- Photos (newspaper B&W, from the cited articles) ---------- */
+.frontmatter{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:26px 28px 24px;margin:0 0 20px;text-align:left}
+.kick{font-family:var(--head);font-size:16px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--navy)}
+.frontmatter h1.headline{font-family:var(--head);font-weight:700;font-size:clamp(34px,5.4vw,54px);line-height:1.08;color:var(--darknavy);margin:.22em 0 .3em}
+.coverage{color:var(--gray);margin:0;max-width:760px;font-size:17px}
+.lead{margin:22px 0 0;text-align:left;background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:5px;padding:16px 20px 18px}
+.lead .lead-kick{font-family:var(--head);font-size:16px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:6px}
+.lead p{font-size:21px;line-height:1.5;margin:0;font-weight:500}
+.contents{margin:18px 0 0;border-top:1px solid var(--line);padding-top:12px;font-size:16px;color:var(--gray);line-height:1.7}
+/* ---------- Photos (full color, from the cited articles) ---------- */
 .photo{margin:20px auto}
-.photo img{width:100%;height:auto;display:block;border:1px solid var(--ink);filter:grayscale(92%) contrast(1.06)}
-.photo figcaption{font-style:italic;font-size:.88rem;color:var(--gray);padding-top:6px;text-align:left;line-height:1.45}
-.photo .credit{display:block;font-style:normal;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:3px}
-.lead-photo{max-width:820px}
-.sec-photo{max-width:460px;margin:14px 0 6px}
+.photo img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:5px}
+.photo figcaption{font-size:15px;color:var(--gray);padding-top:7px;text-align:left;line-height:1.5}
+.photo .credit{display:block;font-family:var(--mono);font-size:13px;color:var(--gray);margin-top:3px}
+.lead-photo{max-width:860px}
+.sec-photo{max-width:520px;margin:16px 0 8px}
 /* ---------- At a Glance ---------- */
-.glance{max-width:820px;margin:24px auto 0;border:3px double var(--ink);background:var(--paper2);padding:16px 22px 12px;text-align:left}
-.glance h2{font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;margin:0 0 10px;color:var(--accent)}
-.glance ul{margin:0;padding-left:20px}
-.glance li{margin:5px 0;line-height:1.5}
-.glance-deadline{border-top:1px solid var(--hair2);margin:12px 0 2px;padding-top:9px}
-.glance-note{font-style:italic;color:var(--gray);font-size:.9rem;margin:8px 0 4px}
+.glance{max-width:860px;margin:22px auto 0;background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:18px 24px 14px;text-align:left}
+.glance h2{font-family:var(--head);font-size:24px;font-weight:700;color:var(--darknavy);margin:0 0 10px;padding-bottom:8px;border-bottom:3px solid var(--gold)}
+.glance ul{margin:0;padding-left:22px}
+.glance li{margin:6px 0;line-height:1.55}
+.glance-deadline{border-top:1px solid var(--line);margin:12px 0 2px;padding-top:10px}
+.glance-note{color:var(--gray);font-size:15px;margin:8px 0 4px}
 /* ---------- Sticky section jump-nav ---------- */
-.jumpnav{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:3px double var(--ink);margin-top:22px;padding:9px 2px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center}
-.jumpnav .jump-kick{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-right:4px}
-.jumpnav a{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:10px 12px;border:1px solid var(--hair2);line-height:1.1}
-.jumpnav a:hover{background:var(--paper2);color:var(--accent);text-decoration:underline}
+.jumpnav{position:sticky;top:0;z-index:10;background:var(--panel);border:1px solid var(--line);border-radius:5px;margin:0 0 20px;padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.jumpnav .jump-kick{font-family:var(--head);font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin:0 6px 0 4px}
+.jumpnav a{font-family:var(--head);font-size:17px;font-weight:700;color:var(--navy);text-decoration:none;padding:10px 12px;min-height:48px;display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:5px;line-height:1.15}
+.jumpnav a:hover{background:var(--page);color:var(--darknavy);text-decoration:underline}
 /* ---------- Article ---------- */
-article{margin-top:10px}
-article h1{font-family:var(--serif);font-weight:800;font-size:clamp(1.45rem,3.6vw,2rem);line-height:1.25;text-align:center;margin:26px 0 6px;padding-bottom:14px;border-bottom:1px solid var(--hair2)}
-article h2{margin:42px 0 18px;padding:9px 6px;text-align:center;font-family:var(--body);font-weight:700;font-size:1.08rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;
-  border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);clear:both}
-article h3{margin:30px 0 8px;padding-top:15px;border-top:1px solid var(--hair);font-family:var(--serif);font-weight:700;font-size:1.22rem;line-height:1.35}
-article h4{margin:22px 0 6px;font-size:1.02rem;font-style:italic}
+article{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:8px 30px 30px;margin-top:0}
+article h1{font-family:var(--head);font-weight:700;font-size:32px;line-height:1.2;color:var(--darknavy);margin:26px 0 10px;padding-bottom:10px;border-bottom:3px solid var(--gold)}
+article h2{margin:44px 0 18px;padding-bottom:8px;font-family:var(--head);font-weight:700;font-size:clamp(28px,4vw,32px);line-height:1.2;color:var(--darknavy);border-bottom:3px solid var(--gold);clear:both}
+article h3{margin:30px 0 8px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--head);font-weight:700;font-size:25px;line-height:1.25;color:var(--ink)}
+article h4{margin:22px 0 6px;font-size:19px;font-weight:600}
 article p,article li{color:var(--ink);max-width:68ch}
-article strong{color:#000}
-article hr{border:none;border-top:1px solid var(--hair2);margin:30px auto;width:55%}
-article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:.92rem;display:block;overflow-x:auto;font-family:var(--sans)}
-article th,article td{border:1px solid var(--ink);padding:7px 10px;text-align:left;vertical-align:top}
-article th{background:var(--paper2)}
-article code{background:#efe9d6;padding:1px 5px;font-size:.88em}
-article blockquote{margin:18px 10px;padding:2px 18px;border-left:2px solid var(--ink);font-style:italic;color:var(--gray)}
-.lead-p::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4em;line-height:.82;padding:4px 10px 0 0}
-.deadline-flag{border-left:2px solid var(--accent);padding-left:10px}
+article strong{color:var(--darknavy)}
+article hr{border:none;border-top:1px solid var(--line);margin:30px auto;width:55%}
+article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:16px;display:block;overflow-x:auto}
+article th,article td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+article th{background:var(--page);font-family:var(--head);font-size:17px;color:var(--darknavy)}
+article code{background:var(--page);padding:1px 5px;font-family:var(--mono);font-size:.9em}
+article blockquote{margin:18px 10px;padding:2px 18px;border-left:3px solid var(--gold);color:var(--gray)}
+.deadline-flag{border-left:3px solid var(--gold);padding-left:10px}
 /* ---------- Stories (headline + deck + impact, full text folded) ---------- */
-.story{border-top:1px solid var(--hair);padding:18px 0 6px;margin-top:8px}
-article h3.story-head{border-top:none;padding-top:0;margin:0 0 6px;font-size:1.3rem;line-height:1.32}
-.deck{font-size:1.07rem;font-style:italic;color:#26231c;margin:0 0 9px}
-.impact{border-left:3px solid var(--accent);padding-left:12px;margin:0 0 12px}
-.impact-kick{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-details.full{margin:2px 0 14px}
-details.full summary{cursor:pointer;list-style:none;font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  padding:13px 16px;border:1px solid var(--ink);background:var(--paper2);min-height:48px}
+.story{border-top:1px solid var(--line);padding:20px 0 8px;margin-top:10px}
+article h3.story-head{border-top:none;padding-top:0;margin:0 0 8px;font-size:clamp(24px,3.4vw,28px);line-height:1.22;color:var(--darknavy)}
+.deck{font-size:20px;line-height:1.55;color:var(--ink);margin:0 0 10px;max-width:68ch}
+.impact{border-left:3px solid var(--gold);background:var(--page);border-radius:0 5px 5px 0;padding:10px 14px;margin:0 0 14px;max-width:68ch}
+.impact-kick{font-family:var(--head);font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy)}
+details.full{margin:2px 0 16px}
+details.full summary{cursor:pointer;list-style:none;font-family:var(--head);font-size:18px;font-weight:700;letter-spacing:.04em;color:var(--navy);
+  padding:12px 16px;border:1px solid var(--line);border-radius:5px;background:var(--panel);min-height:48px}
 details.full summary::-webkit-details-marker{display:none}
-details.full summary::after{content:' +';color:var(--accent)}
+details.full summary::after{content:' +';color:var(--gold)}
 details.full[open] summary::after{content:' –'}
-details.full summary:hover{background:#efe8d2}
-.story-body{padding:8px 2px 2px}
+details.full summary:hover{background:var(--page)}
+.story-body{padding:10px 2px 2px}
 .story-body p,.story-body li{max-width:68ch}
-/* ---------- Boxed notices (unverified / recycled / could-not-verify) ---------- */
-.notice{border:3px double var(--ink);background:var(--paper2);padding:4px 24px 20px;margin:36px 0}
-.notice h2{border-top:none;border-bottom:1px solid var(--ink);text-align:left;color:var(--accent);margin-top:18px}
+/* ---------- Notice panels (not confirmed / older stories / could not check) ---------- */
+.notice{border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:5px;background:var(--panel);padding:6px 26px 22px;margin:30px 0}
+.notice h2{border-bottom:3px solid var(--gold);color:var(--darknavy);margin-top:20px}
 /* ---------- Pager ---------- */
-.pager{display:flex;flex-wrap:wrap;margin-top:34px;border-top:3px double var(--ink)}
-.pager a{flex:1;min-width:200px;text-align:center;padding:12px 8px;color:var(--ink);text-decoration:none;
-  font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.pager a + a{border-left:1px solid var(--hair)}
-.pager a:hover{text-decoration:underline;color:var(--accent)}
-.backtop{text-align:center;margin-top:26px;font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.pager{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pager a{flex:1;min-width:200px;text-align:center;padding:12px 10px;min-height:48px;display:inline-flex;align-items:center;justify-content:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:5px;color:var(--navy);text-decoration:none;
+  font-family:var(--head);font-size:18px;font-weight:700;letter-spacing:.03em}
+.pager a:hover{color:var(--darknavy);text-decoration:underline;background:var(--page)}
+.backtop{text-align:center;margin-top:26px;font-family:var(--head);font-size:17px;font-weight:700;letter-spacing:.05em}
 .backtop a{text-decoration:none}
-.backtop a:hover{text-decoration:underline;color:var(--accent)}
+.backtop a:hover{text-decoration:underline}
 /* ---------- Archive / back issues ---------- */
-.backissues{margin-top:8px}
-.issue{display:flex;gap:18px;align-items:flex-start;padding:18px 4px 20px;border-bottom:1px solid var(--hair2);color:var(--ink);text-decoration:none}
-.issue:first-child{border-top:1px solid var(--ink)}
-.issue:hover{text-decoration:none;background:#f3eee0}
+.backissues{margin-top:0;display:flex;flex-direction:column;gap:14px}
+.issue{display:flex;gap:18px;align-items:flex-start;padding:18px 20px;background:var(--panel);border:1px solid var(--line);border-radius:5px;color:var(--ink);text-decoration:none}
+.issue:hover{text-decoration:none;background:var(--page)}
 .issue:hover .d{text-decoration:underline}
-.issue-thumb{width:118px;height:86px;object-fit:cover;flex:none;border:1px solid var(--ink);filter:grayscale(92%) contrast(1.06);margin-top:4px}
+.issue-thumb{width:150px;height:104px;object-fit:cover;flex:none;border:1px solid var(--line);border-radius:5px;margin-top:4px}
 .issue-text{flex:1;min-width:0}
-.issue .kick{font-size:.74rem}
-.issue .d{font-family:var(--serif);font-weight:800;font-size:1.45rem;line-height:1.25;margin:6px 0 6px}
-.issue p{margin:0;color:var(--gray)}
-.issue .leadlabel{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
-.issue .win{margin-top:7px;font-style:italic;font-size:.95rem}
-footer{border-top:4px double var(--ink);margin-top:38px;padding-top:14px;text-align:center;color:var(--gray);font-size:.9rem;font-style:italic}
+.issue .kick{font-size:15px}
+.issue .d{font-family:var(--head);font-weight:700;font-size:27px;line-height:1.2;color:var(--darknavy);margin:5px 0 6px}
+.issue p{margin:0;color:var(--gray);font-size:17px}
+.issue .leadlabel{font-family:var(--head);font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy)}
+.issue .win{margin-top:7px;font-size:16px}
+footer{border-top:1px solid var(--line);margin-top:34px;padding-top:14px;text-align:center;color:var(--gray);font-size:15px}
 @media(max-width:640px){
-  .masthead img.logo{height:50px}
-  .dateline{justify-content:center;text-align:center}
-  .dateline .dl-c{flex-basis:100%;order:3}
-  article{font-size:16px}
-  .notice{padding:2px 15px 16px}
+  body{font-size:18px}
+  .wrap{padding:0 10px 48px}
+  .sitehead{padding:16px 16px 0}
+  .sitehead img.logo{height:44px}
+  .sitetitle{font-size:27px}
+  .frontmatter{padding:20px 18px}
+  article{padding:6px 16px 22px}
+  .notice{padding:4px 16px 18px}
   .pager a{min-width:150px}
   .glance{padding:14px 16px 10px}
   .jumpnav{justify-content:flex-start}
   .sec-photo{max-width:100%}
   .issue{flex-direction:column;gap:10px}
-  .issue-thumb{width:100%;height:auto;max-height:190px}
+  .issue-thumb{width:100%;height:auto;max-height:200px}
 }
 """
 
 JS = """
 <script>
-// Newspaper touches applied at read time (content itself is untouched):
-// a drop cap on the article's first paragraph, and a burgundy rule beside any
+// Read-time touch (content itself is untouched): a gold rule beside any
 // block whose own text states a deadline (the reports carry no separate
 // 'Act on it' marker list, so none is invented).
 (function(){
-  var first = document.querySelector('article p');
-  if(first && first.textContent.trim().length > 120){first.classList.add('lead-p');}
   document.querySelectorAll('article li, article p').forEach(function(el){
     if(/deadline/i.test(el.textContent) && el.textContent.length < 900){el.classList.add('deadline-flag');}
   });
@@ -690,29 +689,31 @@ JS = """
 """
 
 
-def page(title: str, hero: str, body: str, root: str, dateline: str) -> str:
+def page(title: str, hero: str, body: str, root: str, dateline: str, active: str = "latest") -> str:
+    latest_cls = ' class="active"' if active == "latest" else ""
+    archive_cls = ' class="active"' if active == "archive" else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(title)} — The Sharma Legal Briefing</title>
+<title>{html.escape(title)} — Sharma Legal Briefing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head>
 <body>
 <div class="wrap" id="top">
-<header class="masthead">
-<img class="logo" src="{root}logo.png" alt="Sharma Electric &amp; HVAC logo">
-<div class="nameplate">The Sharma Legal Briefing</div>
+<header class="sitehead">
+<div class="brand"><img class="logo" src="{root}logo.png" alt="Sharma Electric &amp; HVAC logo"><span class="sitetitle">Sharma Legal Briefing</span></div>
 <p class="tagline">Daily legal news for Sharma Electric &amp; HVAC — a Florida electrical &amp; HVAC subcontractor</p>
-<div class="dateline"><span>Orlando, Florida</span><span class="dl-c">{html.escape(dateline)}</span><span>Daily Edition</span></div>
-<nav class="pagenav"><a href="{root}index.html">Latest Edition</a><a href="{root}archive/index.html">Archive — Back Issues</a></nav>
+<div class="meta"><span>Orlando, Florida</span><span>·</span><span>{html.escape(dateline)}</span><span>·</span><span>Daily Edition</span></div>
+<nav class="pagenav"><a href="{root}index.html"{latest_cls}>Latest Edition</a><a href="{root}archive/index.html"{archive_cls}>Archive — Back Issues</a></nav>
 </header>
 {hero}
 {body}
-<p class="backtop"><a href="#top">↑ Back to top</a></p>
+<p class="backtop"><a href="#top">Back to top</a></p>
 <footer>Sharma Electric &amp; HVAC — daily legal news briefing for the office. General legal information only, not legal advice on a specific job. Every item carries its source link in the briefing text.</footer>
 </div>
 {JS}
@@ -727,10 +728,10 @@ def hero_for(ed, latest: bool, glance: str, lead_photo: str, jumpnav: str) -> st
 <span class="kick">{tag}</span>
 <h1 class="headline">Legal News Briefing — {html.escape(ed['weekday'])}, {html.escape(ed['date'])}</h1>
 <p class="coverage">Coverage window: {html.escape(ed['window'])} (Eastern Time) · Prepared for Sharma Electric &amp; HVAC — builder clients, supplier accounts, crews statewide.</p>
-<div class="lead"><span class="lead-kick">★ Lead Story</span><p>{html.escape(ed['biggest'])}</p></div>
+<div class="lead"><span class="lead-kick">Lead Story</span><p>{html.escape(ed['biggest'])}</p></div>
 {lead_photo}
 {glance}
-<p class="contents">In this edition — §1 Big Legal News &nbsp;·&nbsp; §2 Florida &nbsp;·&nbsp; §3 Business Law &nbsp;·&nbsp; §4 Construction &amp; Contractor Law &nbsp;·&nbsp; §5 Money &amp; Deal Law<br>Each story shows its headline, a one-line deck and the Sharma impact; tap “Read the full story” for the complete text and source links. Unverified and recycled items appear in boxed notices at the end of each edition, as in the source reports.</p>
+<p class="contents">In this edition — §1 Big Legal News &nbsp;·&nbsp; §2 Florida &nbsp;·&nbsp; §3 Business Law &nbsp;·&nbsp; §4 Construction &amp; Contractor Law &nbsp;·&nbsp; §5 Money &amp; Deal Law<br>Each story shows its headline, a one-line deck and the Sharma impact; tap “Read the full story” for the complete text and source links. Items that could not be confirmed, and older stories going around again, appear at the end of each edition under their own headings, as in the source reports.</p>
 </section>
 {jumpnav}"""
 
@@ -768,7 +769,7 @@ def main():
             pager.append(f'<a href="{n["date"]}.html">{n["weekday"]} {n["date"]} →</a>')
         pager.append('<a href="../index.html">Latest Edition →</a></div>')
         body = f"<article>{article}</article>" + "".join(pager)
-        out = page(f"{ed['label']} — Legal News Briefing", hero, body, "../", ed["label"])
+        out = page(f"{ed['label']} — Legal News Briefing", hero, body, "../", ed["label"], active="archive")
         (DOCS / "archive" / f"{ed['date']}.html").write_text(out, encoding="utf-8")
         print("wrote archive", ed["date"])
 
@@ -810,7 +811,7 @@ def main():
     arch_body = '<div class="backissues">' + "".join(rows) + "</div>"
     arch_body += '<div class="pager"><a href="../index.html">← Latest Edition</a></div>'
     (DOCS / "archive" / "index.html").write_text(
-        page("Archive — Legal News Briefing", hero, arch_body, "../", "Archive — Back Issues"), encoding="utf-8"
+        page("Archive — Legal News Briefing", hero, arch_body, "../", "Archive — Back Issues", active="archive"), encoding="utf-8"
     )
     print("wrote archive index")
 
