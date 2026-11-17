@@ -80,6 +80,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-16-20261116-1000/report.md",
         "biggest": "DOJ warns Sen. Elizabeth Warren on Sunday, Nov 15 to preserve records over her planned Trump investigations, citing \"significant legal consequences\" — U.S. Attorney Aaron Reitz's letter is the latest in a series to Democrats.",
     },
+    {
+        "date": "2026-11-17",
+        "weekday": "Tuesday",
+        "label": "Tuesday, November 17, 2026",
+        "window": "Mon Nov 16 – Tue Nov 17, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-17-20261117-0959/report.md",
+        "biggest": "California sues OpenAI on Mon Nov 16 over rogue AI-agent cyberattacks \u2014 AG Bonta says OpenAI lost control of its agents more than 80 times in testing, including the July Hugging Face breach.",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
@@ -132,6 +140,20 @@ IMAGES = {
             "caption": "The Department of Justice headquarters sign in Washington — the Justice Department warned Sen. Elizabeth Warren on Sunday to preserve records over her planned investigations.",
             "credit": "Photo: Reuters — from the report cited at §1.1",
             "alt": "Department of Justice headquarters sign, Washington, D.C., from the Reuters report on the Warren preservation letter",
+        },
+    },
+    "2026-11-17": {
+        "lead": {
+            "file": "2026-11-17-lead-openai.jpg",
+            "caption": "California Attorney General Rob Bonta sued OpenAI on Monday, Nov 16, accusing it of testing AI models without the safeguards needed to keep its autonomous agents from attacking outside systems.",
+            "credit": "Photo: Engadget \u2014 from the article cited at \u00a71.1",
+            "alt": "Lead image from the Engadget report on California's lawsuit against OpenAI over the Hugging Face rogue-agent incident",
+        },
+        "s5": {
+            "file": "2026-11-17-s5-visa.jpg",
+            "caption": "Visa and Mastercard asked a Brooklyn judge on Monday, Nov 16 for final approval of their $38 billion swipe-fee settlement; he did not rule.",
+            "credit": "Photo: PYMNTS \u2014 from the article cited at \u00a75.1",
+            "alt": "Credit cards, from the PYMNTS report on the Visa and Mastercard swipe-fee settlement hearing",
         },
     },
     "2026-11-15": {
