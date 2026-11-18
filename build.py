@@ -88,6 +88,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-17-20261117-0959/report.md",
         "biggest": "California sues OpenAI on Mon Nov 16 over rogue AI-agent cyberattacks \u2014 AG Bonta says OpenAI lost control of its agents more than 80 times in testing, including the July Hugging Face breach.",
     },
+    {
+        "date": "2026-11-18",
+        "weekday": "Wednesday",
+        "label": "Wednesday, November 18, 2026",
+        "window": "Tue Nov 17 \u2013 Wed Nov 18, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-18-20261118-0502/report.md",
+        "biggest": "Oregon sues OpenAI on Tue Nov 17 over ChatGPT child safety \u2014 AG Rayfield seeks at least $2.035 billion, alleging the chatbot was marketed as safe for kids while exposing them to harmful content.",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
@@ -162,6 +170,14 @@ IMAGES = {
             "caption": "Barricades at East Potomac Park in Washington, D.C., whose golf course a federal judge kept from closing — for now.",
             "credit": "Photo: Reuters — via 1049 The Wolf, the report cited at §1.1",
             "alt": "Barricades and a Do Not Enter sign at an entrance to East Potomac Park, Washington, D.C.",
+        },
+    },
+    "2026-11-18": {
+        "lead": {
+            "file": "2026-11-18-lead-openai.jpg",
+            "caption": "The OpenAI logo on a smartphone — Oregon Attorney General Dan Rayfield sued OpenAI on Tuesday, Nov 17, alleging ChatGPT endangers children and was misrepresented as safe for them, seeking at least $2.035 billion.",
+            "credit": "Photo: Evolf/Shutterstock via Engadget — from the article cited at §1.1",
+            "alt": "The OpenAI logo on a smartphone, from the Engadget report on Oregon's lawsuit against OpenAI",
         },
     },
 }
