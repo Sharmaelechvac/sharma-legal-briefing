@@ -623,9 +623,9 @@ CSS = """
 :root{
   --navy:#264387; --darknavy:#1a2f61; --gold:#F0A846; --ink:#1d2433;
   --gray:#5b6478; --line:#dfe4ee; --page:#f4f6fb; --panel:#ffffff;
-  --head:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif;
-  --body:'Inter',-apple-system,'Segoe UI',Arial,sans-serif;
-  --mono:'IBM Plex Mono','SFMono-Regular',Consolas,'Courier New',monospace;
+  --head:-apple-system,'SF Pro Display',Inter,'Segoe UI',sans-serif;
+  --body:-apple-system,'SF Pro Text',Inter,'Segoe UI',sans-serif;
+  --mono:ui-monospace,'SF Mono',Consolas,'Courier New',monospace;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -763,20 +763,33 @@ def page(title: str, hero: str, body: str, root: str, dateline: str, active: str
     latest_cls = ' class="active"' if active == "latest" else ""
     archive_cls = ' class="active"' if active == "archive" else ""
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sk">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#264387">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Legal">
 <title>{html.escape(title)} — Sharma Legal Briefing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="{root}manifest.webmanifest">
+<link rel="apple-touch-icon" href="https://sharma-kit.sharma-crew.workers.dev/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sharma-kit.sharma-crew.workers.dev/assets/favicon-32.png">
+<link rel="stylesheet" href="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.css">
+<script src="https://sharma-kit.sharma-crew.workers.dev/sharma-kit.js" defer></script>
 <style>{CSS}</style>
 </head>
-<body>
+<body class="sk">
+<header class="sk-header"><div class="sk-header__bar">
+<div class="sk-header__lead"><a class="sk-header__logo" href="{root}index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
+<div class="sk-header__title">Legal Briefing</div>
+<div class="sk-header__trail"></div>
+</div></header>
+<div class="sk-offline"></div>
 <div class="wrap" id="top">
 <header class="sitehead">
-<div class="brand"><img class="logo" src="{root}logo.png" alt="Sharma Electric &amp; HVAC logo"><span class="sitetitle">Sharma Legal Briefing</span></div>
+<div class="brand"><span class="sitetitle">Sharma Legal Briefing</span></div>
 <p class="tagline">Daily legal news for Sharma Electric &amp; HVAC — a Florida electrical &amp; HVAC subcontractor</p>
 <div class="meta"><span>Orlando, Florida</span><span>·</span><span>{html.escape(dateline)}</span><span>·</span><span>Daily Edition</span></div>
 <nav class="pagenav"><a href="{root}index.html"{latest_cls}>Latest Edition</a><a href="{root}archive/index.html"{archive_cls}>Archive — Back Issues</a></nav>
@@ -787,6 +800,7 @@ def page(title: str, hero: str, body: str, root: str, dateline: str, active: str
 <footer>Sharma Electric &amp; HVAC — daily legal news briefing for the office. General legal information only, not legal advice on a specific job. Every item carries its source link in the briefing text.</footer>
 </div>
 {JS}
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{root}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev").catch(function(){{}}); }}); }}</script>
 </body>
 </html>
 """
