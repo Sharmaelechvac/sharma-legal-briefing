@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="sk" data-scheme="light">
+<html lang="en" class="sk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#264387">
+  <meta name="color-scheme" content="light">
+  <script>(function(){try{if(localStorage.getItem("sk-scheme")==="dark"){var d=document.documentElement;d.setAttribute("data-scheme","dark");var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=d.getAttribute("data-theme")==="track"?"#1C1C1E":"#1a2f61"}}catch(e){}})()</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -144,7 +146,7 @@ footer{border-top:1px solid var(--line);margin-top:34px;padding-top:14px;text-al
 <header class="sk-header"><div class="sk-header__bar">
 <div class="sk-header__lead"><a class="sk-header__logo" href="../index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
 <div class="sk-header__title">Legal Briefing</div>
-<div class="sk-header__trail"></div>
+<div class="sk-header__trail"><a class="sk-header__btn" href="../more/" aria-label="More"><svg class="sk-icon"><use href="#i-more"/></svg></a></div>
 </div></header>
 <div class="sk-offline"></div>
 <div class="wrap" id="top">
@@ -312,6 +314,6 @@ footer{border-top:1px solid var(--line);margin-top:34px;padding-top:14px;text-al
 })();
 </script>
 
-<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) { addEventListener("load", function(){ navigator.serviceWorker.register("../sw.js?kit=https://sharma-kit.sharma-crew.workers.dev").catch(function(){}); }); }</script>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) { addEventListener("load", function(){ navigator.serviceWorker.register("../sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", { scope: "/sharma-legal-briefing/" }).catch(function(){}); }); }</script>
 </body>
 </html>

@@ -16,7 +16,7 @@ from the cited source articles themselves (see IMAGES) run full color.
 Design (Sanjay, 2026-11-15 — "words way too small, need a hot modern look";
 supersedes the broadsheet newspaper template): the standing Sharma design
 system in ~/workspace/DESIGN-RULES.md — navy #264387 / dark navy #1a2f61 /
-gold #F0A846 on page #f4f6fb, Barlow Semi Condensed 700 headings, Inter body
+gold #F0A846 on page #f4f6fb, kit display headings, Inter body
 at 18px, IBM Plex Mono for numbers/dates, real logo on a white header with a
 3px gold line under it, flat white panels, full-color photos, plain section
 headings ("Not confirmed", "Older stories going around again", "Could not
@@ -763,11 +763,11 @@ def page(title: str, hero: str, body: str, root: str, dateline: str, active: str
     latest_cls = ' class="active"' if active == "latest" else ""
     archive_cls = ' class="active"' if active == "archive" else ""
     return f"""<!DOCTYPE html>
-<html lang="en" class="sk" data-scheme="light">
+<html lang="en" class="sk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#264387">
+<meta name="theme-color" content="#264387">\n<meta name="color-scheme" content="light">\n<script>(function(){{try{{if(localStorage.getItem("sk-scheme")==="dark"){{var d=document.documentElement;d.setAttribute("data-scheme","dark");var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=d.getAttribute("data-theme")==="track"?"#1C1C1E":"#1a2f61"}}}}catch(e){{}}}})()</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -784,7 +784,7 @@ def page(title: str, hero: str, body: str, root: str, dateline: str, active: str
 <header class="sk-header"><div class="sk-header__bar">
 <div class="sk-header__lead"><a class="sk-header__logo" href="{root}index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
 <div class="sk-header__title">Legal Briefing</div>
-<div class="sk-header__trail"></div>
+<div class="sk-header__trail"><a class="sk-header__btn" href="{prefix}more/" aria-label="More"><svg class="sk-icon"><use href="#i-more"/></svg></a></div>
 </div></header>
 <div class="sk-offline"></div>
 <div class="wrap" id="top">
@@ -800,7 +800,7 @@ def page(title: str, hero: str, body: str, root: str, dateline: str, active: str
 <footer>Sharma Electric &amp; HVAC — daily legal news briefing for the office. General legal information only, not legal advice on a specific job. Every item carries its source link in the briefing text.</footer>
 </div>
 {JS}
-<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{root}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev").catch(function(){{}}); }}); }}</script>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{root}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", { scope: "/sharma-legal-briefing/" }).catch(function(){{}}); }}); }}</script>
 </body>
 </html>
 """
