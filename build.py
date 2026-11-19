@@ -96,6 +96,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-18-20261118-0502/report.md",
         "biggest": "Oregon sues OpenAI on Tue Nov 17 over ChatGPT child safety \u2014 AG Rayfield seeks at least $2.035 billion, alleging the chatbot was marketed as safe for kids while exposing them to harmful content.",
     },
+    {
+        "date": "2026-11-19",
+        "weekday": "Thursday",
+        "label": "Thursday, November 19, 2026",
+        "window": "Wed Nov 18 \u2013 Thu Nov 19, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-19-20261119-0959/report.md",
+        "biggest": "Senate clears the BAAJA permitting bill's last 60-vote hurdle on Wed Nov 18 \u2014 budget waiver 70\u201326, Capito substitute adopted 69\u201327, final cloture 65\u201331 \u2014 with the passage vote still pending at the cutoff.",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
@@ -178,6 +186,14 @@ IMAGES = {
             "caption": "The OpenAI logo on a smartphone — Oregon Attorney General Dan Rayfield sued OpenAI on Tuesday, Nov 17, alleging ChatGPT endangers children and was misrepresented as safe for them, seeking at least $2.035 billion.",
             "credit": "Photo: Evolf/Shutterstock via Engadget — from the article cited at §1.1",
             "alt": "The OpenAI logo on a smartphone, from the Engadget report on Oregon's lawsuit against OpenAI",
+        },
+    },
+    "2026-11-19": {
+        "lead": {
+            "file": "2026-11-19-lead-baaja.jpg",
+            "caption": "The U.S. Capitol at dusk \u2014 the Senate on Wednesday, Nov 18 cleared the BAAJA permitting bill's last 60-vote hurdle (final cloture 65\u201331), leaving only a simple-majority passage vote, which had not occurred by the cutoff.",
+            "credit": "Photo: Heatmap News \u2014 from the article cited at \u00a71.1",
+            "alt": "The U.S. Capitol dome at dusk with lit windows, from the Heatmap News report on the Senate's permitting-bill votes",
         },
     },
 }
