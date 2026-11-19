@@ -763,7 +763,7 @@ def page(title: str, hero: str, body: str, root: str, dateline: str, active: str
     latest_cls = ' class="active"' if active == "latest" else ""
     archive_cls = ' class="active"' if active == "archive" else ""
     return f"""<!DOCTYPE html>
-<html lang="en" class="sk">
+<html lang="en" class="sk" data-scheme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
