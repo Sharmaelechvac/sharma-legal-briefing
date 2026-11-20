@@ -104,6 +104,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-19-20261119-0959/report.md",
         "biggest": "Senate clears the BAAJA permitting bill's last 60-vote hurdle on Wed Nov 18 \u2014 budget waiver 70\u201326, Capito substitute adopted 69\u201327, final cloture 65\u201331 \u2014 with the passage vote still pending at the cutoff.",
     },
+    {
+        "date": "2026-11-20",
+        "weekday": "Friday",
+        "label": "Friday, November 20, 2026",
+        "window": "Thu Nov 19 \u2013 Fri Nov 20, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-20-20261120-0500/report.md",
+        "biggest": "Senate passes the BAAJA permitting bill 62\u201333 on Thu Nov 19 and sends it to the House \u2014 plus DOL's final independent-contractor rule, the GSA/DHS E-Verify sweep (responses due Dec 16), Florida's record 20th execution (Overton), and the OSHA HazCom substances deadline today.",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
@@ -186,6 +194,14 @@ IMAGES = {
             "caption": "The OpenAI logo on a smartphone — Oregon Attorney General Dan Rayfield sued OpenAI on Tuesday, Nov 17, alleging ChatGPT endangers children and was misrepresented as safe for them, seeking at least $2.035 billion.",
             "credit": "Photo: Evolf/Shutterstock via Engadget — from the article cited at §1.1",
             "alt": "The OpenAI logo on a smartphone, from the Engadget report on Oregon's lawsuit against OpenAI",
+        },
+    },
+    "2026-11-20": {
+        "s3": {
+            "file": "2026-11-20-s3-dol.jpg",
+            "caption": "Labor Secretary Keith Sonderling — the Department of Labor announced its final independent-contractor rule on Thursday, Nov 19, restoring a control-and-profit/loss test.",
+            "credit": "Photo: Win McNamee via Getty Images \u2014 from the HR Dive article cited at \u00a73.1",
+            "alt": "Secretary of Labor Keith Sonderling, from the HR Dive report on the Department of Labor's independent-contractor final rule",
         },
     },
     "2026-11-19": {
@@ -784,7 +800,7 @@ def page(title: str, hero: str, body: str, root: str, dateline: str, active: str
 <header class="sk-header"><div class="sk-header__bar">
 <div class="sk-header__lead"><a class="sk-header__logo" href="{root}index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
 <div class="sk-header__title">Legal Briefing</div>
-<div class="sk-header__trail"><a class="sk-header__btn" href="{prefix}more/" aria-label="More"><svg class="sk-icon"><use href="#i-more"/></svg></a></div>
+<div class="sk-header__trail"><a class="sk-header__btn" href="{root}more/" aria-label="More"><svg class="sk-icon"><use href="#i-more"/></svg></a></div>
 </div></header>
 <div class="sk-offline"></div>
 <div class="wrap" id="top">
@@ -800,7 +816,7 @@ def page(title: str, hero: str, body: str, root: str, dateline: str, active: str
 <footer>Sharma Electric &amp; HVAC — daily legal news briefing for the office. General legal information only, not legal advice on a specific job. Every item carries its source link in the briefing text.</footer>
 </div>
 {JS}
-<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{root}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", { scope: "/sharma-legal-briefing/" }).catch(function(){{}}); }}); }}</script>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {{ addEventListener("load", function(){{ navigator.serviceWorker.register("{root}sw.js?kit=https://sharma-kit.sharma-crew.workers.dev", {{ scope: "/sharma-legal-briefing/" }}).catch(function(){{}}); }}); }}</script>
 </body>
 </html>
 """
