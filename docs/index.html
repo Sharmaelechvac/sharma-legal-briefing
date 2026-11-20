@@ -141,7 +141,37 @@ footer{border-top:1px solid var(--line);margin-top:34px;padding-top:14px;text-al
   .issue-thumb{width:100%;height:auto;max-height:200px}
 }
 </style>
-</head>
+<style>/* HOME-NEWS-V3 */
+/* ---------- HOME NEWS v3 LOOK (Sanjay 2026-11-20: "News apps need to look
+   like Sharma Home app News tab") — Apple News magazine feel: rounded
+   photo cards with depth/shadow, gold kicker pills, navy gradient lead
+   band, oversized headlines. Overrides only; content unchanged. ---------- */
+.sitehead{border:none;border-radius:20px;box-shadow:0 10px 26px rgba(16,24,40,.10);padding-top:20px;margin-top:14px}
+.kick,.lead-kick,.impact-kick,.jump-kick{display:inline-flex;align-items:center;background:var(--gold);
+color:var(--darknavy);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:800;
+letter-spacing:.08em;box-shadow:0 2px 8px rgba(240,168,70,.45)}
+.frontmatter{border:none;border-radius:20px;box-shadow:0 12px 28px rgba(16,24,40,.13);padding:26px 28px 24px}
+.lead{background:linear-gradient(135deg,var(--darknavy),var(--navy) 55%,#2f529e);color:#fff;
+border:none;border-radius:16px;box-shadow:0 10px 24px rgba(26,47,97,.30);padding:18px 20px 20px}
+.lead p{color:#fff}
+.lead .lead-kick{background:var(--gold);color:var(--darknavy)}
+.photo img{border:none;border-radius:16px;box-shadow:0 8px 22px rgba(16,24,40,.16)}
+.glance{border:none;border-radius:16px;box-shadow:0 10px 26px rgba(16,24,40,.10);padding:18px 22px 12px}
+.glance h2{border-bottom:none}
+.glance h2::after{content:"";display:block;width:32px;height:4px;border-radius:2px;background:var(--gold);margin-top:7px}
+.jumpnav{background:transparent;border:none;box-shadow:none;padding:4px 0}
+.jumpnav a{background:#fff;border:1px solid #D8DCE6;border-radius:999px;box-shadow:0 1px 4px rgba(16,24,40,.06);min-height:44px}
+article{border:none;border-radius:20px;box-shadow:0 10px 26px rgba(16,24,40,.10)}
+article h2{border-bottom:none}
+article h2::after{content:"";display:block;width:32px;height:4px;border-radius:2px;background:var(--gold);margin-top:7px}
+.story{background:var(--page);border-top:none;border-radius:16px;padding:18px 18px 10px;margin-top:16px}
+.impact{background:#FFF8EC;border-left:none;border-radius:12px}
+.issue{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(16,24,40,.09)}
+.issue-thumb{border-radius:12px}
+html[data-scheme="dark"] .frontmatter,html[data-scheme="dark"] .glance,
+html[data-scheme="dark"] article,html[data-scheme="dark"] .sitehead{background:#1C1C1E}
+html[data-scheme="dark"] .story{background:#2A2A2E}
+</style></head>
 <body class="sk">
 <header class="sk-header"><div class="sk-header__bar">
 <div class="sk-header__lead"><a class="sk-header__logo" href="index.html"><img src="https://sharma-kit.sharma-crew.workers.dev/assets/logo-white-header.png" alt="Sharma Electric &amp; HVAC" width="103" height="20"></a></div>
