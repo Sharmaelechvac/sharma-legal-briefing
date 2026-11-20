@@ -760,35 +760,48 @@ footer{border-top:1px solid var(--line);margin-top:34px;padding-top:14px;text-al
   .issue-thumb{width:100%;height:auto;max-height:200px}
 }
 
-/* ---------- HOME NEWS v3 LOOK (Sanjay 2026-11-20: "News apps need to look
-   like Sharma Home app News tab") — Apple News magazine feel: rounded
-   photo cards with depth/shadow, gold kicker pills, navy gradient lead
-   band, oversized headlines. Overrides only; content unchanged. ---------- */
-.sitehead{border:none;border-radius:20px;box-shadow:0 10px 26px rgba(16,24,40,.10);padding-top:20px;margin-top:14px}
-.kick,.lead-kick,.impact-kick,.jump-kick{display:inline-flex;align-items:center;background:var(--gold);
-color:var(--darknavy);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:800;
-letter-spacing:.08em;box-shadow:0 2px 8px rgba(240,168,70,.45)}
-.frontmatter{border:none;border-radius:20px;box-shadow:0 12px 28px rgba(16,24,40,.13);padding:26px 28px 24px}
-.lead{background:linear-gradient(135deg,var(--darknavy),var(--navy) 55%,#2f529e);color:#fff;
-border:none;border-radius:16px;box-shadow:0 10px 24px rgba(26,47,97,.30);padding:18px 20px 20px}
-.lead p{color:#fff}
-.lead .lead-kick{background:var(--gold);color:var(--darknavy)}
-.photo img{border:none;border-radius:16px;box-shadow:0 8px 22px rgba(16,24,40,.16)}
-.glance{border:none;border-radius:16px;box-shadow:0 10px 26px rgba(16,24,40,.10);padding:18px 22px 12px}
-.glance h2{border-bottom:none}
-.glance h2::after{content:"";display:block;width:32px;height:4px;border-radius:2px;background:var(--gold);margin-top:7px}
-.jumpnav{background:transparent;border:none;box-shadow:none;padding:4px 0}
-.jumpnav a{background:#fff;border:1px solid #D8DCE6;border-radius:999px;box-shadow:0 1px 4px rgba(16,24,40,.06);min-height:44px}
-article{border:none;border-radius:20px;box-shadow:0 10px 26px rgba(16,24,40,.10)}
-article h2{border-bottom:none}
-article h2::after{content:"";display:block;width:32px;height:4px;border-radius:2px;background:var(--gold);margin-top:7px}
-.story{background:var(--page);border-top:none;border-radius:16px;padding:18px 18px 10px;margin-top:16px}
-.impact{background:#FFF8EC;border-left:none;border-radius:12px}
-.issue{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(16,24,40,.09)}
-.issue-thumb{border-radius:12px}
+/* ---------- NYT LOOK (Sanjay 2026-11-20: "Still blocky — mimic NYT") —
+   Replaces the Home News v3 card look. New York Times style: flat white
+   paper, black serif headlines (Georgia), hairline rules instead of
+   cards/shadows/rounded corners, small sans kickers. Content unchanged. --- */
+body{background:#fff;color:#121212}
+.sitehead{background:#fff;border:none;border-bottom:1px solid #121212;border-radius:0;
+box-shadow:none;padding-top:18px;margin-top:0}
+.sitetitle{font-family:Georgia,"Times New Roman",Times,serif;color:#121212}
+.kick,.lead-kick,.impact-kick,.jump-kick{display:inline-block;background:none;color:#121212;
+border-radius:0;padding:0;font-size:12px;font-weight:700;letter-spacing:.08em;
+text-transform:uppercase;box-shadow:none}
+.frontmatter{background:#fff;border:none;border-bottom:1px solid #DFDFDD;border-radius:0;
+box-shadow:none;padding:20px 0 18px}
+.frontmatter h1.headline{font-family:Georgia,"Times New Roman",Times,serif;color:#121212}
+.lead{background:#fff;color:#121212;border:none;border-left:2px solid #121212;border-radius:0;
+box-shadow:none;padding:4px 0 4px 16px}
+.lead p{color:#121212;font-family:Georgia,"Times New Roman",Times,serif;font-size:21px}
+.lead .lead-kick{background:none;color:#121212}
+.photo img{border:none;border-radius:0;box-shadow:none}
+.photo figcaption{color:#727272}
+.glance{background:#fff;border:none;border-top:2px solid #121212;border-bottom:1px solid #DFDFDD;
+border-radius:0;box-shadow:none;padding:14px 0 8px}
+.glance h2{font-family:-apple-system,"SF Pro Text",Inter,Arial,sans-serif;font-size:14px;
+text-transform:uppercase;letter-spacing:.08em;color:#121212;border-bottom:none}
+.glance h2::after{display:none}
+.jumpnav{background:#fff;border:none;border-bottom:1px solid #DFDFDD;border-radius:0;
+box-shadow:none;padding:6px 0}
+.jumpnav a{background:none;border:none;border-radius:0;box-shadow:none;min-height:44px;color:#121212}
+article{background:#fff;border:none;border-radius:0;box-shadow:none}
+article h1,article h2,article h3{font-family:Georgia,"Times New Roman",Times,serif;color:#121212}
+article h2{border-bottom:1px solid #121212}
+article h2::after{display:none}
+article strong{color:#121212}
+.story{background:#fff;border-top:1px solid #DFDFDD;border-radius:0;padding:20px 0 8px;margin-top:10px}
+.impact{background:#F7F7F5;border-left:2px solid #121212;border-radius:0}
+.impact-kick{background:none;color:#121212}
+.issue{background:#fff;border-radius:0;box-shadow:none}
+.issue-thumb{border-radius:0}
+a{color:#121212}
 html[data-scheme="dark"] .frontmatter,html[data-scheme="dark"] .glance,
-html[data-scheme="dark"] article,html[data-scheme="dark"] .sitehead{background:#1C1C1E}
-html[data-scheme="dark"] .story{background:#2A2A2E}
+html[data-scheme="dark"] article,html[data-scheme="dark"] .sitehead{background:#fff}
+html[data-scheme="dark"] .story{background:#fff}
 """
 
 JS = """
