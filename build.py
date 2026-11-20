@@ -874,6 +874,25 @@ footer a{color:#121212}
 .notice{background:#F7F7F5;border-left:2px solid #121212;border-radius:0}
 .backtop{text-align:center}
 .glance-deadline{border-top:1px solid #DFDFDD}
+/* ---------- REFINEMENT — THE CLICK (Sanjay 2026-11-20: "more refined,
+   especially when clicking") — briefing pages read like an NYT article:
+   serif body text, proper caption small print, ruled full-text folds,
+   quiet link behaviour. ---------- */
+article p,.deck{font-family:Georgia,"Times New Roman",Times,serif;font-size:18px;
+line-height:1.62;color:#333;max-width:66ch}
+article h3.story-head{font-size:27px;letter-spacing:-.01em;color:#121212}
+.story{padding:24px 0 10px}
+.impact{font-size:16px;line-height:1.55}
+.photo figcaption{font-size:12px;color:#727272;line-height:1.5}
+.photo .credit{font-size:11px;color:#909090}
+details.full summary{font-family:-apple-system,"SF Pro Text",Inter,Arial,sans-serif;
+font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#121212;
+padding:14px 0;border-top:1px solid #DFDFDD}
+.pager a:hover{background:#F7F7F5}
+.jumpnav a:hover{background:#F7F7F5;text-decoration:none}
+a{-webkit-tap-highlight-color:transparent}
+::selection{background:#E8EEF7}
+html{scroll-behavior:smooth}
 """
 
 JS = """
