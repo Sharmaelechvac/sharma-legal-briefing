@@ -112,6 +112,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-20-20261120-0500/report.md",
         "biggest": "Senate passes the BAAJA permitting bill 62\u201333 on Thu Nov 19 and sends it to the House \u2014 plus DOL's final independent-contractor rule, the GSA/DHS E-Verify sweep (responses due Dec 16), Florida's record 20th execution (Overton), and the OSHA HazCom substances deadline today.",
     },
+    {
+        "date": "2026-11-21",
+        "weekday": "Saturday",
+        "label": "Saturday, November 21, 2026",
+        "window": "Fri Nov 20 \u2013 Sat Nov 21, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-21-20261121-0500/report.md",
+        "biggest": "Fifth Circuit rules 9\u20138 on Fri Nov 20 that the House unconstitutionally passed the 2022 $1.7 trillion spending bill by proxy voting (Quorum Clause), upholding an injunction barring enforcement of its Pregnant Workers Fairness Act provision against Texas \u2014 plus a new executive order flowing congressional-request duties down to federal subcontractors, the DOL contractor rule's fixed dates (publishes Nov 23, effective Jan 22, 2027), and the OSHA HazCom substances deadline passing on Nov 20.",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
@@ -202,6 +210,14 @@ IMAGES = {
             "caption": "Labor Secretary Keith Sonderling — the Department of Labor announced its final independent-contractor rule on Thursday, Nov 19, restoring a control-and-profit/loss test.",
             "credit": "Photo: Win McNamee via Getty Images \u2014 from the HR Dive article cited at \u00a73.1",
             "alt": "Secretary of Labor Keith Sonderling, from the HR Dive report on the Department of Labor's independent-contractor final rule",
+        },
+    },
+    "2026-11-21": {
+        "s2": {
+            "file": "2026-11-21-s2-kosowski.jpg",
+            "caption": "Tomasz Kosowski in court in Pinellas County — a judge sentenced the self-represented former plastic surgeon to death on Friday, Nov 20 for the murder of attorney Steven Cozzi.",
+            "credit": "Photo: CNN — from the article cited at §2.1",
+            "alt": "Tomasz Kosowski in an orange jail uniform seated in a Pinellas County courtroom, from the CNN report on his death sentence",
         },
     },
     "2026-11-19": {
