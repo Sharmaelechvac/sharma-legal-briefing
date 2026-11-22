@@ -120,6 +120,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-21-20261121-0500/report.md",
         "biggest": "Fifth Circuit rules 9\u20138 on Fri Nov 20 that the House unconstitutionally passed the 2022 $1.7 trillion spending bill by proxy voting (Quorum Clause), upholding an injunction barring enforcement of its Pregnant Workers Fairness Act provision against Texas \u2014 plus a new executive order flowing congressional-request duties down to federal subcontractors, the DOL contractor rule's fixed dates (publishes Nov 23, effective Jan 22, 2027), and the OSHA HazCom substances deadline passing on Nov 20.",
     },
+    {
+        "date": "2026-11-22",
+        "weekday": "Sunday",
+        "label": "Sunday, November 22, 2026",
+        "window": "Sat Nov 21 \u2013 Sun Nov 22, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-22-20261122-0500/report.md",
+        "biggest": "A thin Saturday: a Missouri judge gives final approval on Fri Nov 20 to Bayer's $7.25 billion Roundup settlement (reported Sat Nov 21) \u2014 plus Florida AG Uthmeier's FDUTPA suit against The Leapfrog Group over hospital safety grades, the flood emergency (EO 26-232) covering 21 counties including Brevard, Lake and Seminole through Jan 1, 2027, and a Saturday Chapter 11 filing by lender Oxygen Funding.",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
