@@ -128,6 +128,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-22-20261122-0500/report.md",
         "biggest": "A thin Saturday: a Missouri judge gives final approval on Fri Nov 20 to Bayer's $7.25 billion Roundup settlement (reported Sat Nov 21) \u2014 plus Florida AG Uthmeier's FDUTPA suit against The Leapfrog Group over hospital safety grades, the flood emergency (EO 26-232) covering 21 counties including Brevard, Lake and Seminole through Jan 1, 2027, and a Saturday Chapter 11 filing by lender Oxygen Funding.",
     },
+    {
+        "date": "2026-11-23",
+        "weekday": "Monday",
+        "label": "Monday, November 23, 2026",
+        "window": "Sun Nov 22 \u2013 Mon Nov 23, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-23-20261123-0500/report.md",
+        "biggest": "A thin Sunday: the Army says it will bypass a court order and detonate 68 barrels of toxic lead azide in Iowa by Tuesday, Nov 24, invoking emergency powers after the Eighth Circuit froze its permit \u2014 plus confirmation that Friday's federal-contractor order is Executive Order 14438, a federal judge blocking Connecticut's ICE mask ban (Fri Nov 20, late-located), and three watch items landing today (DOL contractor-rule publication, SCOTUS orders list, Tasty Chick'n lease hearing).",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
