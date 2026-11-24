@@ -136,6 +136,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-23-20261123-0500/report.md",
         "biggest": "A thin Sunday: the Army says it will bypass a court order and detonate 68 barrels of toxic lead azide in Iowa by Tuesday, Nov 24, invoking emergency powers after the Eighth Circuit froze its permit \u2014 plus confirmation that Friday's federal-contractor order is Executive Order 14438, a federal judge blocking Connecticut's ICE mask ban (Fri Nov 20, late-located), and three watch items landing today (DOL contractor-rule publication, SCOTUS orders list, Tasty Chick'n lease hearing).",
     },
+    {
+        "date": "2026-11-24",
+        "weekday": "Tuesday",
+        "label": "Tuesday, November 24, 2026",
+        "window": "Mon Nov 23 \u2013 Tue Nov 24, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-24-20261124-0500/report.md",
+        "biggest": "A full Monday: the Eighth Circuit lifts its stay Monday evening and clears the Army's Iowa lead-azide detonation for Wednesday morning, Nov 25, hours after the President ordered a pause \u2014 plus the DOL independent-contractor rule published in the Federal Register (91 FR 75646, effective Fri Jan 22, 2027), no Supreme Court orders list on Monday, and Florida AG Uthmeier's Orlando slaughterhouse arrests.",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
