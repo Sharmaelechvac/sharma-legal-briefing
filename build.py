@@ -144,6 +144,22 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-24-20261124-0500/report.md",
         "biggest": "A full Monday: the Eighth Circuit lifts its stay Monday evening and clears the Army's Iowa lead-azide detonation for Wednesday morning, Nov 25, hours after the President ordered a pause \u2014 plus the DOL independent-contractor rule published in the Federal Register (91 FR 75646, effective Fri Jan 22, 2027), no Supreme Court orders list on Monday, and Florida AG Uthmeier's Orlando slaughterhouse arrests.",
     },
+    {
+        "date": "2026-11-25",
+        "weekday": "Wednesday",
+        "label": "Wednesday, November 25, 2026",
+        "window": "Tue Nov 24 \u2013 Wed Nov 25, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-briefing-2026-11-25-20261125-2111/report.md",
+        "biggest": "The Iowa detonation happened: at about 9:00 AM CST on Wed Nov 25 the Army detonated 68 barrels of degraded lead azide at the Iowa Army Ammunition Plant \u2014 reported a complete success, with EPA air monitors showing zero detection of airborne lead in early readings \u2014 plus a federal judge blocking the second birthright-citizenship executive order (Nathan v. Trump), FTC v. SHEIN ($100 million), and America's Car-Mart's Chapter 11 filing.",
+    },
+    {
+        "date": "2026-11-26",
+        "weekday": "Thursday",
+        "label": "Thursday, November 26, 2026",
+        "window": "Wed Nov 25 \u2013 Thu Nov 26, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-26-20261126-0500/report.md",
+        "biggest": "A thin Thanksgiving window: a federal judge blocks the FCC's early review of ABC's eight station licences as likely First Amendment retaliation \u2014 'This is not a close case' (Wed Nov 25) \u2014 plus the same judge declining to extend the ban on the $20M administration ad campaign (DNC v. Trump), FEMA's major disaster declaration for the Florida flooding (Tue Nov 24, late-located), corroboration of the AG's DraftKings intervention, and the 42-state fight over Character.AI's bankruptcy data sale (auction Dec 1).",
+    },
 ]
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
@@ -154,6 +170,14 @@ EDITIONS = [
 # added — never a stock substitute, never a publication logo/seal or a generic
 # site fallback graphic. Credit always names the source publication.
 IMAGES = {
+    "2026-11-26": {
+        "lead": {
+            "file": "2026-11-26-lead.jpg",
+            "caption": "President Trump at the White House on November 9, 2026 \u2014 on Wed Nov 25 a federal judge blocked his FCC's early review of ABC's eight station licences as likely retaliation for protected speech.",
+            "credit": "Photo: Getty Images (Chip Somodevilla) \u2014 from TheWrap report cited at \u00a71.1",
+            "alt": "President Trump speaking at the White House, from TheWrap report on the FCC/ABC injunction",
+        },
+    },
     "2026-11-12": {
         "lead": {
             "file": "2026-11-12-lead-bankruptcy.jpg",
