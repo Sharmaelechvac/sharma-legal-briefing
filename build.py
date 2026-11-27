@@ -160,7 +160,16 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-26-20261126-0500/report.md",
         "biggest": "A thin Thanksgiving window: a federal judge blocks the FCC's early review of ABC's eight station licences as likely First Amendment retaliation \u2014 'This is not a close case' (Wed Nov 25) \u2014 plus the same judge declining to extend the ban on the $20M administration ad campaign (DNC v. Trump), FEMA's major disaster declaration for the Florida flooding (Tue Nov 24, late-located), corroboration of the AG's DraftKings intervention, and the 42-state fight over Character.AI's bankruptcy data sale (auction Dec 1).",
     },
+    {
+        "date": "2026-11-27",
+        "weekday": "Friday",
+        "label": "Friday, November 27, 2026",
+        "window": "Thu Nov 26 \u2013 Fri Nov 27, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-27-20261127-0500/report.md",
+        "biggest": "The thinnest window of the run \u2014 no ruling dated Thanksgiving Day itself was confirmed: the AP wire confirms the Second Circuit's Mon Nov 23 ruling reviving the bid to move the New York hush-money case to federal court (yesterday's UNVERIFIED item, at its true date) \u2014 plus Florida's Sixth DCA sending a failed $2.775M custom-home dispute to arbitration and wiping out a $126,624.63 judgment (Zimmerman v. Diez-Arguelles, Wed Nov 25), the Florida Supreme Court's disbarment in The Florida Bar v. Whitco (Wed Nov 25, opinion now available), the First DCA throwing out the fraud findings in a $34.7M tobacco verdict, and Virginia's Ginevan felon-in-possession ruling.",
+    },
 ]
+
 
 # Photos pulled from the cited source articles themselves (Sanjay's direction,
 # 2026-11-15: "Pull photos from the articles you are citing"). Keyed by edition
@@ -170,6 +179,14 @@ EDITIONS = [
 # added — never a stock substitute, never a publication logo/seal or a generic
 # site fallback graphic. Credit always names the source publication.
 IMAGES = {
+    "2026-11-27": {
+        "lead": {
+            "file": "2026-11-27-lead.jpg",
+            "caption": "The Rail Runner station at Isleta Pueblo, New Mexico \u2014 one of four tribal lands where a federal judge on Mon Nov 23 ordered Kalshi to block its sports event contracts (\u00a71.3).",
+            "credit": "Photo: John Phelan, CC BY-SA 3.0, via Wikimedia Commons \u2014 from the CasinoJournal report cited at \u00a71.3",
+            "alt": "Isleta Pueblo Rail Runner station platform, from the CasinoJournal report on the Kalshi injunction",
+        },
+    },
     "2026-11-26": {
         "lead": {
             "file": "2026-11-26-lead.jpg",
