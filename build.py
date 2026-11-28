@@ -168,6 +168,14 @@ EDITIONS = [
         "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-27-20261127-0500/report.md",
         "biggest": "The thinnest window of the run \u2014 no ruling dated Thanksgiving Day itself was confirmed: the AP wire confirms the Second Circuit's Mon Nov 23 ruling reviving the bid to move the New York hush-money case to federal court (yesterday's UNVERIFIED item, at its true date) \u2014 plus Florida's Sixth DCA sending a failed $2.775M custom-home dispute to arbitration and wiping out a $126,624.63 judgment (Zimmerman v. Diez-Arguelles, Wed Nov 25), the Florida Supreme Court's disbarment in The Florida Bar v. Whitco (Wed Nov 25, opinion now available), the First DCA throwing out the fraud findings in a $34.7M tobacco verdict, and Virginia's Ginevan felon-in-possession ruling.",
     },
+    {
+        "date": "2026-11-28",
+        "weekday": "Saturday",
+        "label": "Saturday, November 28, 2026",
+        "window": "Fri Nov 27 \u2013 Sat Nov 28, 2026 (core)",
+        "src": "~/workspace/research_notes/sharma-legal-news-briefing-2026-11-28-20261128-0500/report.md",
+        "biggest": "Another thin Thanksgiving-week window \u2014 no Florida ruling dated Fri Nov 27 was confirmed: a Philadelphia jury's $264M verdict against Home Depot's roofing supplier SRS Distribution over a roofer's fatal fall (Mon Nov 23, reported in full Nov 24\u201327) \u2014 plus the Eleventh Circuit's Figg debarment-by-affiliation ruling and Florida's A.C. culpable-negligence decision (both Wed Nov 25), the ACLU 'Investigation 18' unsealing (Fri Nov 27), the Topgolf overtime-arbitration ruling, and Norse Atlantic's bankruptcy filing (Fri Nov 27).",
+    },
 ]
 
 
